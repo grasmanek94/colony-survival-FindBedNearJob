@@ -34,8 +34,6 @@ namespace grasmanek94.FindBedNearJob
 					BedTracker.Bed bed;
 					if (__instance.Colony.BedTracker.TryGetClosestUnused(__instance.Job.GetJobLocation(), out jobLocation, out bed, 200))
 					{
-						Log.WriteWarning("Redirected NPC Goal");
-
 						ClassUtility.Call(__instance, "ClearBed", new object[] { });
 						ClassUtility.SetProperty(__instance, "UsedBed", bed);
 						ClassUtility.SetProperty(__instance, "UsedBedLocation", jobLocation);
